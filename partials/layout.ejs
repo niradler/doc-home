@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DocHome</title>
+    <meta name="description" content="" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.46.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <meta http-equiv="refresh" content="30; URL=/" /> auto refresh -->
+  </head>
+
+  <body>
+    <main
+      class="relative h-screen overflow-hidden bg-gray-100 dark:bg-gray-800"
+    >
+      <div class="flex items-start justify-between">
+        <div class="relative hidden h-screen shadow-lg lg:block w-80">
+          <div class="h-full bg-white dark:bg-gray-700">
+            <div class="flex items-center justify-start pt-6 ml-8">
+              <p class="text-xl font-bold dark:text-white">DocHome</p>
+            </div>
+            <nav class="mt-6">
+              <div>
+                <a
+                  class="flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 dark:text-white"
+                  href="/"
+                >
+                  <span class="mx-2 text-sm font-normal"> Home </span>
+                </a>
+                <a
+                  class="flex items-center justify-start w-full p-2 pl-6 my-2 text-gray-800 transition-colors duration-200 border-l-4 dark:text-white"
+                  href="/containers"
+                >
+                  <span class="mx-4 text-sm font-normal"> Containers </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:space-y-4">
+          <header class="z-40 flex items-center justify-between w-full h-16">
+            <div class="block ml-6 lg:hidden">
+              <button
+                class="flex items-center p-2 text-gray-500 bg-white rounded-full shadow text-md"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  class="text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 1792 1792"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+          <%- body %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

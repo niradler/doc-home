@@ -1,0 +1,81 @@
+<table class="table p-4 bg-white rounded-lg shadow">
+  <thead>
+    <tr>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Id
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Created
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Image
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Names
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        State
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Status
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Ports
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Networks
+      </th>
+      <th
+        scope="border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900"
+      >
+        Lables
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% containers.forEach(function(container) { %>
+    <tr class="text-gray-700">
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <%= container.Id.slice(0,5) %>
+      </td>
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <%= container.Created %>
+      </td>
+      <td class="border-b-2 p-4 dark:border-dark-5"><%= container.Image %></td>
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <%= container.Names.toString() %>
+      </td>
+      <td class="border-b-2 p-4 dark:border-dark-5"><%= container.State %></td>
+      <td class="border-b-2 p-4 dark:border-dark-5"><%= container.Status %></td>
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <%= container.Ports.map(p=>p.PublicPort).toString() %>
+      </td>
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <%= Object.keys(container.NetworkSettings.Networks).toString() %>
+      </td>
+      <td class="border-b-2 p-4 dark:border-dark-5">
+        <details>
+          <summary>More</summary>
+          <p><%= Object.keys(container.Labels).join("\n") %></p>
+        </details>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

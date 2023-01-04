@@ -1,0 +1,21 @@
+{
+  "name": "doc-home",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon -e js,ejs --exec \"npm run dev\"",
+    "dev": "statikly serve --options-file statikly.json",
+    "start": "statikly serve --options-file statikly.json --host 0.0.0.0 --prod",
+    "statikly": "statikly"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "docker-compose": "^0.23.17",
+    "dockerode": "^3.3.4",
+    "statikly": "^0.0.15"
+  }
+}

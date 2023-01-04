@@ -1,0 +1,12 @@
+{
+    "layout": "./partials/layout.ejs",
+    "port": 3001,
+    "modules": [
+        "cache",
+        "session",
+        "views",
+        "api",
+        "public",
+        "basicAuth"
+    ]
+}

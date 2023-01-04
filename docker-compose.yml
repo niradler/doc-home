@@ -1,0 +1,80 @@
+version: "3.4"
+
+services:
+  mongo_container:
+    container_name: mongo_service
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=app mongo
+      - homepage.title=MONGO
+      - homepage.domain=https://mongo.domain.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3201:27017
+
+  mongo_container4324:
+    container_name: mongo_service432
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=app1 mongo
+      - homepage.title=MONGO17
+      - homepage.domain=https://mongo1.domain.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3300:27017
+
+  mongo_container43244:
+    container_name: mongo_service4324
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=app1 mongo
+      - homepage.title=MONGO1421
+      - homepage.domain=https://mongo1.domain.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3031:27017
+
+  mongo_container4241:
+    container_name: mongo_service43241
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=app1 mongo
+      - homepage.title=MONGO142
+      - homepage.domain=https://mongo1.domain.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3102:27017
+
+  mongo_container43:
+    container_name: mongo_service23432
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=app1 mongo
+      - homepage.title=MONGO142
+      - homepage.domain=https://mongo1.domain.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 30230:27017
+
+  mongo_container2:
+    container_name: mongo_service2
+    image: mongo
+    labels:
+      - homepage.show=true
+      - homepage.description=my description
+      - homepage.title=mongo23
+      - homepage.link=test.com
+    environment:
+      NODE_ENV: production
+    ports:
+      - 30310:27017

@@ -1,0 +1,67 @@
+<div class="w-full">
+  <div class="relative w-full px-4 py-6 bg-white shadow-lg dark:bg-gray-700">
+    <p
+      class="text-sm font-semibold text-gray-700 border-b border-gray-200 w-max dark:text-white"
+    >
+      <%= container.Labels['homepage.title'] ?
+      container.Labels['homepage.title'] : container.Names.toString() %>
+      <small>(<%= container.Id.slice(0,5) %>)</small>
+    </p>
+
+    <div class="flex items-end my-6 space-x-2">
+      <span
+        class="flex items-center text-xl font-bold <%= container.State == 'running' ? 'text-green-500' : 'text-red-500' %>"
+      >
+        <%= container.Status %>
+      </span>
+    </div>
+    <div class="dark:text-white">
+      <% if (container.Labels['homepage.domain']) { %>
+        <div
+        class="flex items-center justify-between pb-2 mb-2 space-x-12 text-sm border-b border-gray-200 md:space-x-24"
+      >
+        <p>Domain</p>
+        <div class="flex items-end text-xs">
+          <a target="_blank" href="<%= container.Labels['homepage.domain'] %>"><%= container.Labels['homepage.domain'].replace("https://","").replace("http://","") %></a>
+        </div>
+      </div>
+        <% } %>
+      <% if (container.Labels['homepage.description']) { %>
+      <div
+        class="flex items-center justify-between pb-2 mb-2 space-x-12 text-sm border-b border-gray-200 md:space-x-24"
+      >
+        <p>Description</p>
+        <div class="flex items-end text-xs">
+          <%= container.Labels['homepage.description'] %>
+        </div>
+      </div>
+      <% } %>
+      <div
+        class="flex items-center justify-between pb-2 mb-2 space-x-12 text-sm border-b border-gray-200 md:space-x-24"
+      >
+        <p>Image</p>
+        <div class="flex items-end text-xs"><%= container.Image %></div>
+      </div>
+      <div
+        class="flex items-center justify-between pb-2 mb-2 space-x-12 text-sm border-b border-gray-200 md:space-x-24"
+      >
+        <p>Ports</p>
+        <div class="flex items-end text-xs">
+          <% container.Ports.forEach(function(port) { %>
+          <a target="_blank" href="<%= container.Labels['homepage.protocol'] ? container.Labels['homepage.protocol'] : "http" %>://<%= ip %>:<%= port.PublicPort %>"
+            ><%= port.PublicPort %></a
+          >&nbsp;
+          <% }); %>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-between space-x-12 text-sm md:space-x-24"
+      >
+        <p>Networks</p>
+        <div class="flex items-end text-xs">
+          <%= Object.keys(container.NetworkSettings.Networks).toString() %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="h-screen px-4 pb-24 overflow-auto md:px-6">
+  <h1 class="text-4xl font-semibold text-gray-800 dark:text-white">
+    Dashboard
+  </h1>
+  <h2 class="text-gray-400 text-md">
+    You can customize the dashboard with lables, such as
+    <code>homepage.show=true</code> <code>homepage.title=MyApp</code>
+    <code>homepage.description=My app is amazing</code>
+  </h2>
+
+  <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-3">
+    <% data.containers.forEach(function(container) { %> <%-
+    include(fromRoot('./partials/app.ejs'),{container,ip:data.ip}) %> <% }); %>
+  </div>
+</div>
