@@ -51,6 +51,6 @@ services:
       - 3201:27017
 ```
 
-![homepage](https://github.com/niradler/doc-home/blob/master/assetes/homepage.png?raw=true)
+![homepage](https://github.com/niradler/doc-home/blob/main/assetes/homepage.png?raw=true)
 
-![containers](https://github.com/niradler/doc-home/blob/master/assetes/containers.png?raw=true)
+![containers](https://github.com/niradler/doc-home/blob/main/assetes/containers.png?raw=true)
