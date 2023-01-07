@@ -44,9 +44,9 @@ services:
     image: mongo
     labels:
       - homepage.show=true
-      - homepage.description=proxy manager
-      - homepage.title=nginx-proxy-manager
-      - homepage.domain=https://proxy.niradler.com
+      - homepage.description=mongo db
+      - homepage.title=mongo
+      - homepage.domain=https://mongo.test.com
     ports:
       - 3201:27017
 ```
